@@ -36,6 +36,7 @@ public class TM2NServer {
             new ClientHandler(serverSocket.accept()).start();
     }
 
+// I am sorry... I swear i won't do this kind of commit from now on... this is part of the challenge now
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
