@@ -38,6 +38,7 @@ public class TM2NServer {
 
 // I am sorry... I swear i won't do this kind of commit from now on... this is part of the challenge now
     // 졸려... 힘들어...
+    // ok i delete thingy.. ok i delete game ok i stupid nomore
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
