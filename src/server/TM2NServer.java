@@ -1,4 +1,4 @@
-package com.TM2N;
+package server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,6 +10,8 @@ import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+// Day 5 - studying http/2... i dunno if required but good read anyways
+// Day 6 - Study interface & try implementing HTTPRequest
 public class TM2NServer {
     public static void main(String[] args) throws IOException {
         // Setup DB
@@ -32,13 +34,12 @@ public class TM2NServer {
 //        ExecutorService executorService = Executors.newFixedThreadPool(1000);
 
         // connection thread
+        // define thread pool size here and make sure you provide reason behind pool size
         while (true)
             new ClientHandler(serverSocket.accept()).start();
     }
 
-// I am sorry... I swear i won't do this kind of commit from now on... this is part of the challenge now
-    // 졸려... 힘들어...
-    // ok i delete thingy.. ok i delete game ok i stupid nomore
+// what is thi
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
