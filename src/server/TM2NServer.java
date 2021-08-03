@@ -39,6 +39,7 @@ public class TM2NServer {
             new ClientHandler(serverSocket.accept()).start();
     }
 
+    // Today is the last day i do nothing but study... no more.. i code now... or at least design the damn project
 // what is thi
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
