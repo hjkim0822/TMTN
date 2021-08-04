@@ -35,12 +35,19 @@ public class TM2NServer {
 
         // connection thread
         // define thread pool size here and make sure you provide reason behind pool size
+
+
+        //!!!!!!!! IMPORTANT
+        // Not allowed to just start new thread for every connection
+        // limit thread size to 16 - tomcat standard
+        // TCP with or without TLS -> module for HTTP and HTTPS should be different -> HTTPS = HTTP + TLS
+        // instead of new ClientHandler every serverSocket, add it to an array of new connection? List?
+        // Iterate through new connection and handshake to establish connection
+        // when to close connection with HTTP/2? omg 하아...
         while (true)
             new ClientHandler(serverSocket.accept()).start();
     }
 
-    // Today is the last day i do nothing but study... no more.. i code now... or at least design the damn project
-// what is thi
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
@@ -52,6 +59,7 @@ public class TM2NServer {
 
         @Override
         public void run() {
+            // HANDSHAKE REQUIRED
             try {
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
