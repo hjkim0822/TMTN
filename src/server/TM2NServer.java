@@ -48,6 +48,9 @@ public class TM2NServer {
             new ClientHandler(serverSocket.accept()).start();
     }
 
+    // interface doesn't work... i mean it's a good blueprint, but doesn't have any functionality
+    // other than, of course, provide public final static variables...
+    // can object be public sttic variable?
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
