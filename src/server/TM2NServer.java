@@ -51,6 +51,7 @@ public class TM2NServer {
     // interface doesn't work... i mean it's a good blueprint, but doesn't have any functionality
     // other than, of course, provide public final static variables...
     // can object be public sttic variable?
+    // I think annotation will work
     private static class ClientHandler extends Thread {
         private Socket clientSocket;
         private PrintWriter out;
